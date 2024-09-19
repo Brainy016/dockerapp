@@ -1,13 +1,20 @@
-pipeline{
+pipeline {
     agent any
-    
-    stages{
-        stage("Code checkout"){
+    stages {
+        stage('Build') {
             steps{
-               git branch: 'main', url: 'https://github.com/Brainy016/dockerapp.git'
-                
+                echo 'Building..'
             }
         }
-
+        stage('Test'){
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy'){
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
